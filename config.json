@@ -1,4 +1,4 @@
 {
 	"port":3000,
-	"mongoUri":"MongoUrlToConnect"
+	"mongouri":"mongodb://aspirina:paracetamol@ds113455.mlab.com:13455/evolufarma"
 }
