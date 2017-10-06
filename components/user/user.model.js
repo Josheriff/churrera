@@ -35,7 +35,7 @@ exports.add = async function (userdata){
     await user.save();
 
     return {message: 'success', data: user};
-  }catch(error) {return Promise.reject(error); }
+  }catch(error) {return error; }
 }
 
 exports.getAll = async function (){
@@ -48,18 +48,20 @@ exports.getAll = async function (){
 
       return {message: 'success', data: user};
 
-    }catch(error) {return Promise.reject(error); }
+    }catch(error) {return error; }
     
 };
 
 exports.getOne = async function (id){
   try{
 
-    const user = await UserModel.find({_id:id});
+    const user = await userModel.find({_id:id});
+
+    console.log(user);
 
     return user;  
 
-  } catch(error) {return Promise.reject(error); }
+  } catch(error) {return error;  }
 
 }
 
