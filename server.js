@@ -5,6 +5,10 @@ const express = require('express'),
 
 const app = express();
 
+const Storage = require ('./components/storage');
+
+Storage.connect();
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -24,6 +28,8 @@ app.use(function(req, res, next) {
 
 const port = config.port || 3000
 
-console.log('Lets begin to cook Churros on port ',port)
+const server = app.listen(port, function () {
+    console.log(`lets begin cook churros ${port}`);
+});
 
 Routes(app);
