@@ -1,35 +1,35 @@
 const express = require('express'),
-      bodyParser = require('body-parser'),
-      Routes = require('./components/router'),
-      config = require('./config.json');
+  bodyParser = require('body-parser'),
+  Routes = require('./components/router'),
+  config = require('./config.json');
 
 const app = express();
 
-const Storage = require ('./components/storage');
+const Storage = require('./components/storage');
 
 Storage.connect();
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse application/json
-app.use(bodyParser.json())
+// parse application/jsonº
+app.use(bodyParser.json());
 
 
-//MIDDLEWARE
+// MIDDLEWARE
 // Only Accept x-www-form-urlencoded because of the standards
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header('Access-Control-Allow-Methods', 'GET, POST');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-}); 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
-const port = config.port || 3000
+const port = config.port || 3000;
 
-const server = app.listen(port, function () {
-    console.log(`lets begin cook churros ${port}`);
+const server = app.listen(port, () => {
+  console.log(`lets begin cook churros ${port}`);
 });
 
 Routes(app);

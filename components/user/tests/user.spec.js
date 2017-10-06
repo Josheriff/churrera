@@ -2,24 +2,22 @@ const supertest = require('supertest');
 const config = require('../../../config.json');
 const shortid = require('shortid');
 const should = require('chai').should();
-let route = 'localhost:3000/users';
+
+const route = 'localhost:3000/users';
 
 const api = supertest('localhost:3000');
 
 describe('API', () => {
-  describe(`Endpoint for users`, () => {
+  describe('Endpoint for users', () => {
     before(async () => {
-
       existingUser = {}; // for save changes later
-          
+
       userModel = {
         name: shortid.generate(),
         email: `${shortid.generate()}@email.com`,
         password: shortid.generate(),
       };
-      
-      
-    });    
+    });
 
     it('Create a user', (done) => {
       api
@@ -30,7 +28,7 @@ describe('API', () => {
         .expect(201)
         .end((err, res) => {
           if (err) {
-          	console.log(err, '<<<<<<');	
+          	console.log(err, '<<<<<<');
           	return done(err);
           }
           res.body.should.have.property('name', userModel.name);
@@ -57,7 +55,7 @@ describe('API', () => {
         .expect('Content-Type', /json/)
         .expect(200)
         .end((err, res) => {
-          if (err){
+          if (err) {
             return done(err);
           }
           res.body.should.have.property('_id', existingUser._id);
@@ -77,7 +75,7 @@ describe('API', () => {
           return done();
         });
     });
-   
+
 
     it('Remove a user', (done) => {
       api
