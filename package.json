@@ -1,7 +1,7 @@
 {
-  "name": "kubide",
+  "name": "churera",
   "version": "1.0.0",
-  "description": "An app to travel in time with kubide",
+  "description": "A Boilerplate to make test easier",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Josheriff/kubide.git"
+    "url": "git+https://github.com/Josheriff/churrera.git"
   },
   "author": "Josheriff",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Josheriff/kubide/issues"
+    "url": "https://github.com/Josheriff/churrera/issues"
   },
-  "homepage": "https://github.com/Josheriff/kubide#readme",
+  "homepage": "https://github.com/Josheriff/churrera#readme",
   "dependencies": {
     "body-parser": "1.16.1",
     "express": "4.14.1",
