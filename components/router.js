@@ -6,3 +6,5 @@ console.log('INSIDE THE ROUTER');
 const routes = function (app) {
 	app.use('/user',user);
 }
+
+module.exports = routes;

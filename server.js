@@ -1,6 +1,7 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
-      Routes = require('./components/router.js')
+      Routes = require('./components/router'),
+      config = require('./config.json');
 
 const app = express();
 

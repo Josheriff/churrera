@@ -10,6 +10,8 @@ const UserSchema = Schema({
   objectIdExample: { type: Schema.Types.ObjectId, ref: 'RefOne' }, // add property in toBePopulated
 }, { timestamps: true });
 
+const userModel = mongoose.model('user', UserSchema);
+
 
 // Curate what we send when transform to JSON
 
@@ -27,4 +29,14 @@ UserSchema.set('toJSON', {
   },
 });
 
-module.exports = mongoose.model('user', UserSchema);
+exports.getOne = async function (id){
+  try{
+    const user = await UserModel.find({_id:id});
+
+    return user;
+  } catch(error) return Promise.reject(error);
+
+}
+
+
+// exports.model = userModel; to try if works
