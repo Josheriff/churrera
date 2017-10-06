@@ -1,0 +1,26 @@
+{
+  "name": "kubide",
+  "version": "1.0.0",
+  "description": "An app to travel in time with kubide",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josheriff/kubide.git"
+  },
+  "author": "Josheriff",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Josheriff/kubide/issues"
+  },
+  "homepage": "https://github.com/Josheriff/kubide#readme",
+  "dependencies": {
+    "body-parser": "1.16.1",
+    "express": "4.14.1",
+    "mongoose": "4.8.3",
+    "node-uuid": "1.4.7"
+  }
+}
