@@ -35,7 +35,7 @@ exports.add = async function add(userdata) {
 
     await user.save();
 
-    return { message: 'success', data: user };
+    return user;
   } catch (error) { return error; }
 };
 
@@ -52,7 +52,7 @@ exports.getAll = async function () {
 
 exports.getOne = async function (id) {
   try {
-    const user = await userModel.find({ _id: id });
+    const user = await userModel.findOne({ '_id': mongoose.Types.ObjectId(id) });
 
     console.log(user);
 
